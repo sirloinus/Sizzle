@@ -19,8 +19,9 @@ require_relative '../../config/api_key'
     recipe_hash["source"] = recipe_response_2["source"]["sourceRecipeUrl"]
     recipe_hash["ingredients"] = recipe_response_2["ingredientLines"]
     recipe_hash["servings"] = recipe_response_2["numberOfServings"]
+    recipe_hash["image"] = recipe_response_2["images"][0]["hostedLargeUrl"]
   end
-  #   #incomplete
+
 
   def search_for_random_recipe_by_ingredient(ingr1, ingr2, ingr3)
     url = "http://api.yummly.com/v1/api/recipes?_app_id=" + KEY[:app_id] + "&_app_key=" + KEY[:app_key] + "&q&requirePictures=true&allowedIngredient[]=" + ingr1 + "&allowedIngredient[]=" + ingr2 + "&allowedIngredient[]=" + ingr3
@@ -37,8 +38,10 @@ require_relative '../../config/api_key'
     recipe_hash["source"] = recipe_response_2["source"]["sourceRecipeUrl"]
     recipe_hash["ingredients"] = recipe_response_2["ingredientLines"]
     recipe_hash["servings"] = recipe_response_2["numberOfServings"]
-    binding.pry
+    recipe_hash["images"] = recipe_response_2["images"]
   end
 
-# search_for_recipes_by_keyword("pasta")
-search_for_random_recipe_by_ingredient("chicken", "garlic", "oil")
+
+
+search_for_recipes_by_keyword("pasta")
+# search_for_random_recipe_by_ingredient("chicken", "garlic", "oil")
