@@ -26,6 +26,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    # authorized_for(params[:id])
     @user = User.find(params[:id])
   end
 
