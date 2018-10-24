@@ -1,7 +1,11 @@
+
 HEYYYY
 <br>
 <%= @recipe["name"] %>
 <br>
-<%= @ingr %>
-<br>
+<% array = @recipe["ingredients"].split(/[\]\[\\\,"]/).reject(&:empty?) - [" "]%>
+<% array.each do |i| %>
+  <%= i %>
+  <br>
+<% end %>
 <%= @recipe["time"] %>
