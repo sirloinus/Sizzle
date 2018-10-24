@@ -32,3 +32,4 @@
 
 
 config/api_key.rb
+app/adaptor/adaptor_draft.rb

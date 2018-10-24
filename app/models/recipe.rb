@@ -9,7 +9,6 @@ class Recipe < ApplicationRecord
     # with_empty_strings.each do |s|
     #   if !s.empty?
     no_empty_strings = with_empty_strings.split(/\A[[:space:]]*\z/).flatten
-    no_empty_strings
   end
 
 
