@@ -17,7 +17,6 @@ class RecipesController < ApplicationController
     recipe_suggestion_hash = Adaptor.search_for_recipes_by_keyword(params[:recipe][:name])
     @recipe = Recipe.create(recipe_suggestion_hash)
     @ingr = ingredients_string(@recipe["ingredients"])
-    # @recipe_ingr = @recipe["ingredients"]
     redirect_to recipe_path(@recipe)
   end
 
