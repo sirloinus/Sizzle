@@ -26,6 +26,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    byebug
     # authorized_for(params[:id])
     @user = User.find(params[:id])
   end
@@ -33,6 +34,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
+
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
