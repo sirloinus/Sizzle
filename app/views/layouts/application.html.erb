@@ -10,14 +10,10 @@
   </head>
 
   <body>
-    <% if flash[:authorized] %>
-      <p><%= flash[:authorized] %></p>
-    <% end %>
-    <% if logged_in? %>
-      <%= current_user.name %>
-    <% else %>
-      <p>Hello there, please log in or sign up</p>
-    <% end %>
+
     <%= yield %>
   </body>
+
+
+
 </html>

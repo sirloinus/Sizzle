@@ -1,3 +1,77 @@
-<h1>Hi there, <%= @user.name %></h1>
 
-<%= link_to "Logout", logout_path, method: 'delete' %>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="<% link_to user_path(@user)%>">
+      <h1>SIZZLE</h1>
+      <!-- <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"> -->
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Recipe Search
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href = "">
+            Find by Ingredients
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item" href = "">
+            Find by Keyword
+          </a>
+        </div>
+      </div>
+
+      <a class="navbar-item" href = "">
+        My Cookbook
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          <%= @user.name.titleize %>
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            My Account
+          </a>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" href= "/logout" >
+            <strong>Logout </strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+<figure class="image">
+  <img src="//cdn.shopify.com/s/files/1/1725/5449/products/Variety_subscription_2048x2048.jpg?v=1517257445">
+</figure>
+
+<div id="center-tile" class="tile is-ancestor">
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-primary">
+        <p class="title">Sizzle</p>
+        <p class="subtitle">Some stuff about Sizzle</p>
+        <div class="content">
+          Some Sizzle content woo
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
