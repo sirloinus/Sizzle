@@ -1,19 +1,24 @@
 require_relative "../adaptor/adaptor.rb"
+
 class RecipesController < ApplicationController
+
+  include Adaptor
+  include RecipeModule
 
   def new
     @recipe = Recipe.new
   end
 
   def show
-    @hello = "HEEELLOOO"
+    @recipe = Recipe.find(params[:id])
   end
 
   def create
-    x = search_for_recipes_by_keyword(params[:recipe][:name])
-    puts "XXXXXXXXXXXXXXXXXXX#{x}"
-    @recipe = Recipe.create(recipe_params)
-    redirect_to current_user
+    recipe_suggestion_hash = Adaptor.search_for_recipes_by_keyword(params[:recipe][:name])
+    @recipe = Recipe.create(recipe_suggestion_hash)
+    @ingr = ingredients_string(@recipe["ingredients"])
+    # @recipe_ingr = @recipe["ingredients"]
+    redirect_to recipe_path(@recipe)
   end
 
   def search_keyword
@@ -24,7 +29,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    byebug
+
     params.require(:recipe).permit(:name, :time, :source, :ingredients, :servings, :image)
   end
 
