@@ -2,13 +2,15 @@
   <img src="https://images.pexels.com/photos/606541/pexels-photo-606541.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
 </figure> -->
 
-<div class="columns is-desktop">
-  <% current_user.recipes.each do |recipe| %>
-    <div class="column">
-      <img src="<%= recipe.image %>">
-      <%= link_to recipe.name, recipe_path(recipe) %>
-    </div>
-  <% end %>
+<div class="container is-fluid">
+  <div id="flex_styling" class="columns is-desktop">
+    <% current_user.recipes.each do |recipe| %>
+      <div class="column is-4">
+        <img src="<%= recipe.image %>">
+        <p><%= link_to recipe.name, recipe_path(recipe) %><p>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 
