@@ -1,1 +1,18 @@
-Hello this is the index page
+<div class="columns is-desktop">
+  <% current_user.recipes.each do |recipe| %>
+    <div class="column">
+      <img src="<%= recipe.image %>">
+      <%= link_to recipe.name, recipe_path(recipe) %>
+    </div>
+  <% end %>
+</div>
+
+
+  <!-- <div class="column">1</div>
+  <div class="column">2</div>
+  <div class="column">3</div>
+  <div class="column">4</div>
+</div> -->
+
+<!-- <figure class="image is-128x128"> -->
+<!-- </figure> -->
