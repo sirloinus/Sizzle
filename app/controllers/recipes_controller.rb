@@ -13,9 +13,15 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
+  def new_for_three_ingr
+    @recipe = Recipe.new
+    render :search_three
+  end
+
   def show
     @recipe = Recipe.find(params[:id])
   end
+
 
   def create
     search_term = !!params[:keyword] ? params[:keyword] : params[:recipe][:name]
@@ -32,9 +38,13 @@ class RecipesController < ApplicationController
     redirect_to recipe_path(@recipe, :keyword => search_term)
   end
 
-  def search_keyword
-
+  def create_with_ingredients
+    search_term = !!params[:keywords] ? params[:keywords] : [params[:recipe][:name], params[:recipe][:image], params[:recipe][:source]]
+    recipe_suggestion_hash = Adaptor.search_for_random_recipe_by_ingredient(search_term[0], search_term[1], search_term[2])
+    @recipe = Recipe.create(recipe_suggestion_hash)
+    redirect_to recipe_path(@recipe, :keywords => search_term)
   end
+
 
   #
   # def ingredients_string(string)

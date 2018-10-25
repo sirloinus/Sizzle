@@ -45,7 +45,8 @@ require_relative '../../config/api_key'
     recipe_hash["source"] = recipe_response_2["source"]["sourceRecipeUrl"]
     recipe_hash["ingredients"] = recipe_response_2["ingredientLines"]
     recipe_hash["servings"] = recipe_response_2["numberOfServings"]
-    recipe_hash["images"] = recipe_response_2["images"]
+    recipe_hash["image"] = recipe_response_2["images"][0]["hostedLargeUrl"]
+    recipe_hash
   end
 
 
