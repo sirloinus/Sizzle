@@ -31,3 +31,13 @@
     </div>
   </div>
 </div>
+
+<div class="control">
+
+<%=link_to "Save to My Cookbook", user_recipes_path, method: "post", class: "button is-primary"  %>
+
+</div>
+<br>
+<div class="control">
+  <%=link_to "Search Again", recipes_path(:keyword => params[:keyword]), method: "post", class: "button is-primary"  %>
+</div>
