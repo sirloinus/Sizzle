@@ -1,14 +1,33 @@
-<h1 class="title is-1"><%= @recipe["name"] %></h1>
-<img src="<%= @recipe["image"]%>" alt="<%= @recipe["name"] %> dish">
+<figure class="image">
+  <img src="<%= @recipe["image"]%>" alt="<%= @recipe["name"] %> dish">
+</figure>
 
-<br>
-<% array = @recipe["ingredients"].split(/[\]\[\\\,"]/).reject(&:empty?) - [" "]%>
-<% array.each do |i| %>
-  <%= i %>
-  <br>
-<% end %>
-<%= @recipe["time"] %>
-<br>
-<%= @recipe["servings"] %>
-<br>
-<a href="<%= @recipe["source"] %>" target="_blank" >Click me for directions :)</a>
+<div id="center-tile" class="tile is-ancestor">
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-primary">
+        <p class="title"><%= @recipe["name"] %></p>
+        <br>
+        <p class="subtitle">Time:</p>
+        <div class="content">
+          <%= @recipe["time"] %>
+        </div>
+        <p class="subtitle">Servings:</p>
+        <div class="content">
+          <%= @recipe["servings"] %>
+        </div>
+        <p class="subtitle">Ingredients:</p>
+        <div class="content">
+          <% array = @recipe["ingredients"].split(/[\]\[\\\,"]/).reject(&:empty?) - [" "]%>
+          <% array.each do |i| %>
+            <%= i %>
+            <br>
+          <% end %>
+        </div>
+        <p class="subtitle">Instructions:</p>
+        <div class="content">
+          <a href="<%= @recipe["source"] %>" target="_blank" >Click me for directions :)</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
