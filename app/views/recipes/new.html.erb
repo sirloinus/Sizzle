@@ -1,17 +1,18 @@
-<!-- <div class="control">
-  <input class="input" type="text" placeholder="Keyword">
-  <div class="control">
-    <button class="button is-primary" href="/">Submit</button>
-  </div>
-</div> -->
 <figure class="image">
-  <img src="http://bevcooks.com/wp-content/uploads/2011/12/pizza9.jpg">
+  <img src="//cdn.shopify.com/s/files/1/1725/5449/products/Variety_subscription_2048x2048.jpg?v=1517257445">
 </figure>
 
 <div id="center-tile" class="tile is-ancestor">
     <div class="tile is-parent">
       <article class="tile is-child notification is-primary">
         <p class="title">Search by Keyword</p>
+        <div class="content">
+          <% if flash[:errors] %>
+            <% flash[:errors].each do |e| %>
+              <p> <%= e %></p>
+            <% end %>
+          <% end %>
+        </div>
         <div class="content">
           <%= form_for @recipe do |f| %>
             <%= f.text_field :name %>

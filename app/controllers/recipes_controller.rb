@@ -25,17 +25,14 @@ class RecipesController < ApplicationController
 
   def create
     search_term = !!params[:keyword] ? params[:keyword] : params[:recipe][:name]
-    # if !!params[:keyword]
-    #   search_term = session[:keyword]
-    # else
-    #   search_term = params[:recipe][:name]
-    #   session[:keyword] = search_term
-    # end
-    recipe_suggestion_hash = Adaptor.search_for_recipes_by_keyword(search_term)
-    @recipe = Recipe.create(recipe_suggestion_hash)
-    # @ingr = ingredients_string(@recipe["ingredients"])
-    # @recipe_ingr = @recipe["ingredients"]
-    redirect_to recipe_path(@recipe, :keyword => search_term)
+    if Adaptor.search_for_recipes_by_keyword(search_term)
+      recipe_suggestion_hash = Adaptor.search_for_recipes_by_keyword(search_term)
+      @recipe = Recipe.create(recipe_suggestion_hash)
+      redirect_to recipe_path(@recipe, :keyword => search_term)
+    else
+      flash[:errors] = ["No recipe match found. Please try another keyword."]
+      redirect_to new_recipe_path
+    end
   end
 
   def create_with_ingredients
@@ -45,7 +42,7 @@ class RecipesController < ApplicationController
       @recipe = Recipe.create(recipe_suggestion_hash)
       redirect_to recipe_path(@recipe, :keywords => search_term)
     else
-      flash[:errors] = ["No recipe match found"]
+      flash[:errors] = ["No recipe found matching your ingredients. Please try again."]
       redirect_to recipe_suggestion_path
     end
   end
