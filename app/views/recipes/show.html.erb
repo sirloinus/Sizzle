@@ -39,5 +39,9 @@
 </div>
 <br>
 <div class="control">
-  <%=link_to "Search Again", recipes_path(:keyword => params[:keyword]), method: "post", class: "button is-primary"  %>
+  <% if params[:keyword] %>
+    <%=link_to "Search Again", recipes_path(:keyword => params[:keyword]), method: "post", class: "button is-primary"  %>
+  <% elsif params[:keywords]%>
+    <%=link_to "Search Again", triple_search_path(:keywords => params[:keywords]), method: "post", class: "button is-primary"  %>
+  <% end %>
 </div>

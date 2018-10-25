@@ -9,5 +9,6 @@ class User < ApplicationRecord
   has_secure_password
 
   attr_accessor :keyword
+  attr_accessor :keywords
 
 end

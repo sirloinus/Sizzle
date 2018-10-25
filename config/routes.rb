@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create', as: 'sessions'
   delete '/logout' => 'sessions#destroy', as: 'logout'
 
-  # get '/recipes/search_three', to: "recipes#new", as: 'search_three'
-  # post '/recipes/search_three', to: "recipes#create", as: 'recipe_suggestion'
+  # get '/recipes/search_three', to: "recipes#search_three", as: 'search_three'
+  get '/recipes/search_three', to: "recipes#new_for_three_ingr", as: 'recipe_suggestion'
+  post '/recipes/search_three', to: "recipes#create_with_ingredients", as: 'triple_search'
+
   # get '/recipes/search_keyword', to: "recipes#search_keyword", as: 'search_keyword'
   # post '/recipes/search_three', to: "recipes#create", as: 'recipe_suggestion'
   # get '/recipes/new', to: 'recipes#new', as: 'search'
