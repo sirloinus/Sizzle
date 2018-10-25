@@ -13,7 +13,7 @@
     <% if current_user.id != nil %>
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="<% link_to user_path(current_user) %>">
+          <a class="navbar-item" href="<%= user_path(current_user) %>">
             <h1>SIZZLE</h1>
             <!-- <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"> -->
           </a>
