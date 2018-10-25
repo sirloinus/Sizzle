@@ -40,9 +40,14 @@ class RecipesController < ApplicationController
 
   def create_with_ingredients
     search_term = !!params[:keywords] ? params[:keywords] : [params[:recipe][:name], params[:recipe][:image], params[:recipe][:source]]
-    recipe_suggestion_hash = Adaptor.search_for_random_recipe_by_ingredient(search_term[0], search_term[1], search_term[2])
-    @recipe = Recipe.create(recipe_suggestion_hash)
-    redirect_to recipe_path(@recipe, :keywords => search_term)
+    if Adaptor.search_for_random_recipe_by_ingredient(search_term[0], search_term[1], search_term[2])
+      recipe_suggestion_hash = Adaptor.search_for_random_recipe_by_ingredient(search_term[0], search_term[1], search_term[2])
+      @recipe = Recipe.create(recipe_suggestion_hash)
+      redirect_to recipe_path(@recipe, :keywords => search_term)
+    else
+      flash[:errors] = ["No recipe match found"]
+      redirect_to recipe_suggestion_path
+    end
   end
 
 
