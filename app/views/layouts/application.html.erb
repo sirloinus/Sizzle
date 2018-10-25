@@ -30,11 +30,11 @@
 
               <div class="navbar-dropdown">
                 <a class="navbar-item" href = "/recipes/search_three">
-                  Find by Ingredients
+                  Find Recipe by Ingredients
                 </a>
                 <hr class="navbar-divider">
                 <a class="navbar-item" href = "/recipes/new">
-                  Find by Keyword
+                  Find Recipe by Keyword
                 </a>
               </div>
             </div>
@@ -43,22 +43,16 @@
               My Cookbook
             </a>
 
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                <%= current_user.name.titleize %>
-              </a>
-
-              <div class="navbar-dropdown">
-                <a class="navbar-item">
-                  My Account
-                </a>
-              </div>
-            </div>
-
-
           </div>
 
           <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a>
+                  <strong><%= link_to "My Account", href = " ", method: 'get', class: 'button is-primary' %></strong>
+                </a>
+              </div>
+            </div>
             <div class="navbar-item">
               <div class="buttons">
                 <a>
