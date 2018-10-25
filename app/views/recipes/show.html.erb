@@ -1,7 +1,6 @@
+<h1 class="title is-1"><%= @recipe["name"] %></h1>
+<img src="<%= @recipe["image"]%>" alt="<%= @recipe["name"] %> dish">
 
-HEYYYY
-<br>
-<%= @recipe["name"] %>
 <br>
 <% array = @recipe["ingredients"].split(/[\]\[\\\,"]/).reject(&:empty?) - [" "]%>
 <% array.each do |i| %>
@@ -9,9 +8,7 @@ HEYYYY
   <br>
 <% end %>
 <%= @recipe["time"] %>
-
-
-
-drjklgvnlajsbfnaksbfn;awksn
-asjfknawlksjfna
-uipsbnvf awjsknva
+<br>
+<%= @recipe["servings"] %>
+<br>
+<a href="<%= @recipe["source"] %>" target="_blank" >Click me for directions :)</a>

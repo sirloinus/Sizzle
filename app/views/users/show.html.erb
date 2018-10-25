@@ -48,17 +48,14 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary" href= "/logout" >
-            <!-- Fix logout route to ensure session ended and redirect to welcome home -->
-            <strong>Logout</strong>
+          <a>
+            <strong><%= link_to "Logout", logout_path, method: 'delete', class: 'button is-primary' %></strong>
           </a>
         </div>
       </div>
     </div>
   </div>
 </nav>
-
-
 
 <figure class="image">
   <img src="//cdn.shopify.com/s/files/1/1725/5449/products/Variety_subscription_2048x2048.jpg?v=1517257445">
