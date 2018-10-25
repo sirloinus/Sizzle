@@ -9,7 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body id="<%= request.path == user_path(current_user) ? "image-user-show" : "" %>">
     <% if current_user.id != nil %>
     <p><%= current_user.keyword %></p>
       <nav class="navbar" role="navigation" aria-label="main navigation">
