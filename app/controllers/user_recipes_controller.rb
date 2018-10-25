@@ -22,6 +22,9 @@ class UserRecipesController < ApplicationController
   end
 
   def destroy
+    @user_recipe = UserRecipe.find(params[:recipe_id])[0]
+    @user_recipe.destroy
+    redirect_to user_recipes_path
   end
 
   private
@@ -29,5 +32,6 @@ class UserRecipesController < ApplicationController
   def user_recipe_params
     params.require(:user_recipe).permit([:name, :user_id, :recipe_id])
   end
+
 
 end
