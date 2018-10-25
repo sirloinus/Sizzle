@@ -32,7 +32,7 @@
   </div>
 </div>
 
-<div class="control">
+<div class="control has-text-centered">
 
 <% if current_user.recipes.find {|recipe| recipe == @recipe } %>
   <%=link_to "Delete from My Cookbook", user_recipe_path(:recipe_id => UserRecipe.where(user_id: current_user.id, recipe_id: @recipe.id).ids), method: "delete", class: "button is-primary" %>
@@ -43,7 +43,7 @@
 
 </div>
 <br>
-<div class="control">
+<div class="control has-text-centered">
   <% if params[:keyword] %>
     <%=link_to "Search Again", recipes_path(:keyword => params[:keyword]), method: "post", class: "button is-primary"  %>
   <% elsif params[:keywords]%>

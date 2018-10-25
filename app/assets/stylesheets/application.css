@@ -25,3 +25,7 @@
 #flex_styling {
   flex-flow: row wrap;
 }
+
+#float {
+  float: left;
+}

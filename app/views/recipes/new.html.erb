@@ -5,15 +5,16 @@
 <div id="center-tile" class="tile is-ancestor">
     <div class="tile is-parent">
       <article class="tile is-child notification is-primary">
-        <p class="title">Search by Keyword</p>
-        <div class="content">
+        <p class="title has-text-centered">Search by Keyword</p>
+        <p class="subtitle has-text-centered">Enter cuisine/food/flavour below:</p>
+        <div class="content has-text-centered">
           <% if flash[:errors] %>
             <% flash[:errors].each do |e| %>
               <p> <%= e %></p>
             <% end %>
           <% end %>
         </div>
-        <div class="content">
+        <div class="content has-text-centered">
           <%= form_for @recipe do |f| %>
             <%= f.text_field :name %>
             <%= f.submit "Search" %>
