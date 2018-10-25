@@ -8,6 +8,13 @@
       <article class="tile is-child notification is-primary">
         <p class="title">Search by Ingredients</p>
         <div class="content">
+          <% if flash[:errors] %>
+            <% flash[:errors].each do |e| %>
+              <p> <%= e %></p>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="content">
           <%= form_for @recipe, url:{:controller=>'recipes', :action=>'create_with_ingredients'}, html:{method:'post'} do |f| %>
             <%= f.text_field :name %>
             <%= f.text_field :image %>

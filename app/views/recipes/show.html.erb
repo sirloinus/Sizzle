@@ -34,7 +34,12 @@
 
 <div class="control">
 
-<%=link_to "Save to My Cookbook", user_recipes_path, method: "post", class: "button is-primary"  %>
+<% if  %>
+  <%=link_to "Save to My Cookbook", user_recipes_path, method: "post", class: "button is-primary"  %>
+<% else %>
+  <%=link_to "Delete from My Cookbook", user_recipes_path, method: "post", class: "button is-primary"  %>
+<% end %>
+
 
 </div>
 <br>
