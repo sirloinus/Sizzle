@@ -7,6 +7,8 @@ class RecipesController < ApplicationController
   include Adaptor
   # include RecipeModule
 
+  # before_action :set_user, only: [:show]
+
   def new
     @recipe = Recipe.new
   end
@@ -35,6 +37,11 @@ class RecipesController < ApplicationController
 
 
   private
+
+  def set_user
+    @user = current_user
+    # @user = User.find(session[:user_id])
+  end
 
   def recipe_params
     params.require(:recipe).permit(:name, :time, :source, :ingredients, :servings, :image)
