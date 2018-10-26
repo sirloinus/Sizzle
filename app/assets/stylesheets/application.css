@@ -19,7 +19,7 @@
  #center-tile {
    max-width: 50rem;
    margin: -50rem auto 0;
-   opacity: 0.7;
+   opacity: 0.8;
    overflow: visible !important;
  }
 
@@ -30,7 +30,7 @@
  #search-center-tile {
    margin: 10rem auto;
   max-width: 50rem;
-  opacity: 0.8;
+  opacity: 0.85;
  }
 
 #flex-styling {
@@ -54,9 +54,10 @@ body, html {
   background-repeat: space;
 }
 
-#image-cover.another-image {
+
+/* #image-cover.another-image {
     background-image: url('/cooking.jpeg');
-}
+} */
 
 /* #image-user-show {
   background-image: url("/trial-for-cover.jpeg");
@@ -109,13 +110,13 @@ body, html {
 #text-tile {
   max-width: 50rem;
   margin: -5rem auto 0;
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
 #cookbook-tile {
   max-width: 50rem;
   margin: 3rem auto 0;
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
 #ingredients-section {
@@ -125,6 +126,7 @@ body, html {
   float: right;
   height: 70vh;
   overflow: scroll;
+  opacity: 0.85;
 }
 
 #image-radius, #image-radius-show {
@@ -162,7 +164,6 @@ body, html {
 
 #image-cover.no-image {
     background-image: none;
-    background: #2d70df0f;
 }
 
 /* , #image-user-cookbook */
