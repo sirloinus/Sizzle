@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <div id="image-cover" class="<%= "no-image" if current_page?(controller: 'user_recipes', action: 'index') || (params[:controller] == 'recipes' && params[:action] == 'show'); "another-image" if (params[:controller] == 'recipes' && params[:action] == 'new'); %>">
+    <div id="image-cover" class="<%= "no-image" if current_page?(controller: 'user_recipes', action: 'index') || (params[:controller] == 'recipes' && params[:action] == 'show');%>">
     <% if current_user.id != nil %>
     <p><%= current_user.keyword %></p>
       <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -50,14 +50,14 @@
             <div class="navbar-item">
               <div class="buttons">
                 <a>
-                  <strong><%= link_to "My Account", href = "/users/#{current_user.id}/edit", method: 'get', class: 'button is-primary' %></strong>
+                  <strong><%= link_to "My Account", href = "/users/#{current_user.id}/edit", method: 'get', class: 'button is-dark' %></strong>
                 </a>
               </div>
             </div>
             <div class="navbar-item">
               <div class="buttons">
                 <a>
-                  <strong><%= link_to "Logout", logout_path, method: 'delete', class: 'button is-primary' %></strong>
+                  <strong><%= link_to "Logout", logout_path, method: 'delete', class: 'button is-dark' %></strong>
                 </a>
               </div>
             </div>
@@ -101,14 +101,14 @@
               <div class="navbar-item">
                 <div class="buttons">
                   <a>
-                    <strong><%= link_to "Sign Up", signup_path, class: 'button is-primary' %></strong>
+                    <strong><%= link_to "Sign Up", signup_path, class: 'button is-dark' %></strong>
                   </a>
                 </div>
               </div>
               <div class="navbar-item">
                 <div class="buttons">
                   <a>
-                    <strong><%= link_to "Login", login_path, class: 'button is-primary' %></strong>
+                    <strong><%= link_to "Login", login_path, class: 'button is-dark' %></strong>
                   </a>
                 </div>
               </div>
