@@ -20,6 +20,7 @@
    max-width: 50rem;
    margin: -50rem auto 0;
    opacity: 0.7;
+   overflow: visible !important;
  }
 
 #flex-styling {
@@ -75,6 +76,10 @@ body, html {
 
 #small-right {
   float: right;
+}
+
+#login-tile {
+  margin: 0 auto;
 }
 
 /* , #image-user-cookbook */
