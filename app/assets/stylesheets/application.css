@@ -78,8 +78,16 @@ body, html {
   float: right;
 }
 
-#login-tile {
-  margin: 0 auto;
+#text-tile {
+  max-width: 50rem;
+  margin: -5rem auto 0;
+  opacity: 0.7;
+}
+
+#cookbook-tile {
+  max-width: 50rem;
+  margin: 3rem auto 0;
+  opacity: 0.7;
 }
 
 /* , #image-user-cookbook */
