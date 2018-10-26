@@ -16,6 +16,7 @@
 
  @import "bulma";
 
+
  #center-tile {
    max-width: 50rem;
    margin: -50rem auto 0;
@@ -163,6 +164,7 @@ body, html {
 #image-cover.no-image {
     background-image: none;
     background: #2d70df0f;
+
 }
 
 /* , #image-user-cookbook */
