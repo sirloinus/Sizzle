@@ -31,13 +31,30 @@ body, html {
   height: 100%;
 }
 
-#image-user-show {
+#image-user-show, #image-search-three {
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  background-image: url("/user-show.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
+#image-user-show {
+  background-image: url("/trial-for-cover.jpeg");
+}
+
+#header-margin-top-bottom {
+  margin: 1rem 0 2rem 0;
+}
+
+#image-search-three {
+  background-image: url("/cooking.jpeg");
+}
+
+/* , #image-user-cookbook */
+
+/* #image-user-cookbook {
+  background-image: url("/user-cookbook.jpeg");
+} */

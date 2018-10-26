@@ -2,22 +2,24 @@
   <img src="https://images.pexels.com/photos/606541/pexels-photo-606541.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
 </figure> -->
 
-<h1 class="title is-3 has-text-grey-dark has-text-centered">Welcome <%= current_user.name.capitalize %> to your cookbook</h1>
+<!-- <div id="image-user-cookbook" -->
+  <h1 id="header-margin-top-bottom" class="title is-3 has-text-grey-dark has-text-centered">Welcome <%= current_user.name.capitalize %> to your cookbook</h1>
 
-<% if current_user.recipes.length == 0 %>
-  <p class="has-text-centered">Search for your favourite recipes and save it to your cookbook.</p>
-<% else %>
-  <div class="container is-widescreen">
-    <div id="flex-styling" class="columns">
-      <% current_user.recipes.each do |recipe| %>
-        <div class="column is-4">
-          <a href="<%= recipe_path(recipe) %>"><img src="<%= recipe.image %>"></a>
-          <p><%= link_to recipe.name, recipe_path(recipe) %><p>
-        </div>
-      <% end %>
+  <% if current_user.recipes.length == 0 %>
+    <p class="has-text-centered">Search for your favourite recipes and save it to your cookbook.</p>
+  <% else %>
+    <div class="container is-widescreen">
+      <div id="flex-styling" class="columns">
+        <% current_user.recipes.each do |recipe| %>
+          <div class="column is-4">
+            <a href="<%= recipe_path(recipe) %>"><img src="<%= recipe.image %>"></a>
+            <h6 class="title is-6"><%= link_to recipe.name, recipe_path(recipe) %></h6>
+          </div>
+        <% end %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+<!-- </div> -->
 
 
 
