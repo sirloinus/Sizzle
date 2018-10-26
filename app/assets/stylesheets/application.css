@@ -24,6 +24,7 @@
 
 #flex-styling {
   flex-flow: row wrap;
+  margin-bottom : 4em;
 }
 
 
@@ -31,7 +32,7 @@ body, html {
   height: 100%;
 }
 
-#image-user-show, #image-search-three {
+/* #image-user-show, #image-search-three {
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -45,12 +46,35 @@ body, html {
   background-image: url("/trial-for-cover.jpeg");
 }
 
-#header-margin-top-bottom {
-  margin: 1rem 0 2rem 0;
-}
+
 
 #image-search-three {
   background-image: url("/cooking.jpeg");
+} */
+
+#header-margin-top-bottom {
+  margin: 0.5rem 0 2rem 0;
+}
+
+#footer-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 0.5vh;
+  margin: 0;
+  line-height: 0.5vh;
+}
+
+.footer {
+  padding: 30px 0 30px;
+}
+
+#footer-text-margin {
+  margin: 0 1em;
+}
+
+#small-right {
+  float: right;
 }
 
 /* , #image-user-cookbook */
