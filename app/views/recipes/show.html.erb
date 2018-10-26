@@ -1,52 +1,55 @@
-<figure class="image">
-  <img src="<%= @recipe["image"]%>" alt="<%= @recipe["name"] %> dish">
-</figure>
 
-<div id="center-tile" class="tile is-ancestor">
-    <div class="tile is-parent">
-      <article class="tile is-child notification is-primary">
-        <p class="title"><%= @recipe["name"] %></p>
-        <br>
-        <p class="subtitle">Time:</p>
-        <div class="content">
-          <%= @recipe["time"] %>
-        </div>
-        <p class="subtitle">Servings:</p>
-        <div class="content">
-          <%= @recipe["servings"] %>
-        </div>
-        <p class="subtitle">Ingredients:</p>
-        <div class="content">
-          <% array = @recipe["ingredients"].split(/[\]\[\\\,"]/).reject(&:empty?) - [" "]%>
-          <% array.each do |i| %>
-            <%= i %>
-            <br>
-          <% end %>
-        </div>
-        <p class="subtitle">Instructions:</p>
-        <div class="content">
-          <a href="<%= @recipe["source"] %>" target="_blank" >Click me for directions :)</a>
-        </div>
-      </article>
+<div id="recipe-show-container" class="container">
+  <div id="inline-block-image" class="section">
+    <figure id="image-size-recipe-show" class="image">
+      <p class="title has-text-primary"><%= @recipe["name"] %></p>
+      <img id="image-radius-show" src="<%= @recipe["image"]%>" alt="<%= @recipe["name"] %> dish">
+    </figure>
+    <hr width="80%">
+    <div id="inline-p-for-show">
+      <p id="time-inline" class="subtitle has-text-primary">Time: <%= @recipe["time"] %></p>
+      <p id="servings-inline" class="subtitle has-text-primary">Servings: <%= @recipe["servings"] %></p>
     </div>
+    <hr width="80%">
+    <p class="subtitle"><a class="has-text-danger" href="<%= @recipe["source"] %>" target="_blank" >Click for Instructions :) </a></p>
+
+    <div class="control">
+      <% if current_user.recipes.find {|recipe| recipe == @recipe } %>
+        <%=link_to "Delete from My Cookbook", user_recipe_path(:recipe_id => UserRecipe.where(user_id: current_user.id, recipe_id: @recipe.id).ids), method: "delete", class: "button is-primary" %>
+      <% else %>
+        <%=link_to "Save to My Cookbook", user_recipes_path, method: "post", class: "button is-primary" %>
+      <% end %>
+    </div>
+
+    <br>
+
+    <div class="control has-text-centered">
+      <% if params[:keyword] %>
+        <%=link_to "Search Again", recipes_path(:keyword => params[:keyword]), method: "post", class: "button is-primary"  %>
+      <% elsif params[:keywords]%>
+        <%=link_to "Search Again", triple_search_path(:keywords => params[:keywords]), method: "post", class: "button is-primary"  %>
+      <% end %>
+    </div>
+
   </div>
-</div>
 
-<div class="control has-text-centered">
+  <div id="ingredients-section" class="section">
+    <div id="center-tile" class="tile is-ancestor">
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-primary">
+            <p class="subtitle">Ingredients:</p>
 
-<% if current_user.recipes.find {|recipe| recipe == @recipe } %>
-  <%=link_to "Delete from My Cookbook", user_recipe_path(:recipe_id => UserRecipe.where(user_id: current_user.id, recipe_id: @recipe.id).ids), method: "delete", class: "button is-primary" %>
-<% else %>
-  <%=link_to "Save to My Cookbook", user_recipes_path, method: "post", class: "button is-primary"  %>
-<% end %>
+            <div class="content">
+              <% array = @recipe["ingredients"].split(/[\]\[\\\,"]/).reject(&:empty?) - [" "]%>
+              <% array.each do |i| %>
+                <%= i %>
+                <br>
+              <% end %>
+            </div>
 
+          </article>
+        </div>
+      </div>
+    </div>
 
-</div>
-<br>
-<div class="control has-text-centered">
-  <% if params[:keyword] %>
-    <%=link_to "Search Again", recipes_path(:keyword => params[:keyword]), method: "post", class: "button is-primary"  %>
-  <% elsif params[:keywords]%>
-    <%=link_to "Search Again", triple_search_path(:keywords => params[:keywords]), method: "post", class: "button is-primary"  %>
-  <% end %>
 </div>
