@@ -63,6 +63,57 @@
           </div>
         </div>
       </nav>
+      <% else %>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+              <h1>SIZZLE</h1>
+            </a>
+          </div>
+
+          <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  Recipe Search
+                </a>
+
+                <div class="navbar-dropdown">
+                  <a class="navbar-item" href = "/welcome/please">
+                    Find Recipe by Ingredients
+                  </a>
+                  <hr class="navbar-divider">
+                  <a class="navbar-item" href = "/welcome/please">
+                    Find Recipe by Keyword
+                  </a>
+                </div>
+              </div>
+
+              <a class="navbar-item" href = "/welcome/please">
+                My Cookbook
+              </a>
+
+            </div>
+
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <div class="buttons">
+                  <a>
+                    <strong><%= link_to "Sign Up", signup_path, class: 'button is-primary' %></strong>
+                  </a>
+                </div>
+              </div>
+              <div class="navbar-item">
+                <div class="buttons">
+                  <a>
+                    <strong><%= link_to "Login", login_path, class: 'button is-primary' %></strong>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
       <% end %>
     <%= yield %>
     <footer id="footer-bottom" class="footer">

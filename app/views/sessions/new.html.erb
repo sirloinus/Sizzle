@@ -1,15 +1,30 @@
-<h1> Login </h1>
 
-<% if flash[:errors] %>
-  <% flash[:errors].each do |e| %>
-    <p> <%= e %></p>
-  <% end %>
-<% end %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="tile is-ancestor">
+  <div class="tile is-parent">
+    <article class="tile is-child notification is-primary">
+      <p class="title has-text-centered">Login to SIZZLE</p>
+        <div class="content has-text-centered">
+          <% if flash[:errors] %>
+            <% flash[:errors].each do |e| %>
+              <p> <%= e %></p>
+            <% end %>
+          <% end %>
 
-<%= form_tag sessions_path do %>
-  <%= label_tag :email %>
-  <%= text_field_tag :email %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <%= submit_tag "Login"%>
-<% end %>
+          <%= form_tag sessions_path do %>
+            <%= label_tag :email %>
+            <%= text_field_tag :email %>
+            <%= label_tag :password %>
+            <%= password_field_tag :password %>
+            <br><br>
+            <%= submit_tag "Login"%>
+          <% end %>
+      </div>
+    </article>
+  </div>
