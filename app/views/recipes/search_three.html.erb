@@ -6,15 +6,16 @@
 <div id="center-tile" class="tile is-ancestor">
     <div class="tile is-parent">
       <article class="tile is-child notification is-primary">
-        <p class="title">Search by Ingredients</p>
-        <div class="content">
+        <p class="title has-text-centered">Search by Ingredients</p>
+        <p class="subtitle has-text-centered">Enter three ingredients below:</p>
+        <div class="content has-text-centered">
           <% if flash[:errors] %>
             <% flash[:errors].each do |e| %>
               <p> <%= e %></p>
             <% end %>
           <% end %>
         </div>
-        <div class="content">
+        <div class="content has-text-centered">
           <%= form_for @recipe, url:{:controller=>'recipes', :action=>'create_with_ingredients'}, html:{method:'post'} do |f| %>
             <%= f.text_field :name %>
             <%= f.text_field :image %>

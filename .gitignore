@@ -33,3 +33,4 @@
 
 config/api_key.rb
 app/adaptor/adaptor_draft.rb
+app/views/recipes/showdraft.html.erb
