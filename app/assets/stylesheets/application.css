@@ -16,7 +16,6 @@
 
  @import "bulma";
 
-<<<<<<< HEAD
  #center-tile {
    max-width: 50rem;
    margin: -50rem auto 0;
@@ -24,8 +23,6 @@
    overflow: visible !important;
  }
 
-=======
->>>>>>> dina_recipe_show_styling
 #flex-styling {
   flex-flow: row wrap;
   margin-bottom : 4em;
@@ -133,9 +130,6 @@ body, html {
   display: inline-block;
   float: left;
 }
-
-
-
 
 
 /* , #image-user-cookbook */
