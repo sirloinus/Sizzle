@@ -19,17 +19,18 @@
       <% else %>
         <%=link_to "Save to My Cookbook", user_recipes_path, method: "post", class: "button is-primary" %>
       <% end %>
+      <div id="inline-buttons" class="control has-text-centered">
+        <% if params[:keyword] %>
+          <%=link_to "Search Again", recipes_path(:keyword => params[:keyword]), method: "post", class: "button is-primary"  %>
+        <% elsif params[:keywords]%>
+          <%=link_to "Search Again", triple_search_path(:keywords => params[:keywords]), method: "post", class: "button is-primary"  %>
+        <% end %>
+      </div>
     </div>
 
     <br>
 
-    <div class="control has-text-centered">
-      <% if params[:keyword] %>
-        <%=link_to "Search Again", recipes_path(:keyword => params[:keyword]), method: "post", class: "button is-primary"  %>
-      <% elsif params[:keywords]%>
-        <%=link_to "Search Again", triple_search_path(:keywords => params[:keywords]), method: "post", class: "button is-primary"  %>
-      <% end %>
-    </div>
+
 
   </div>
 
