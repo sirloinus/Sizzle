@@ -23,6 +23,10 @@
    overflow: visible !important;
  }
 
+ #recipe-center-tile {
+   margin: 0;
+ }
+
 #flex-styling {
   flex-flow: row wrap;
   margin-bottom : 4em;
