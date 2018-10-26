@@ -1,26 +1,26 @@
-<figure class="image">
+<!-- <figure class="image">
   <img src="//cdn.shopify.com/s/files/1/1725/5449/products/Variety_subscription_2048x2048.jpg?v=1517257445">
-</figure>
+</figure> -->
 
-<div id="center-tile" class="tile is-ancestor">
-    <div class="tile is-parent">
-      <article class="tile is-child notification is-primary">
-        <p class="title has-text-centered">Search by Keyword</p>
-        <p class="subtitle has-text-centered">Enter cuisine/food/flavour below:</p>
-        <div class="content has-text-centered">
-          <% if flash[:errors] %>
-            <% flash[:errors].each do |e| %>
-              <p> <%= e %></p>
+  <div id="search-center-tile" class="tile is-ancestor">
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-primary">
+          <p class="title has-text-centered">Search by Keyword</p>
+          <p class="subtitle has-text-centered">Enter cuisine/food/flavour below:</p>
+          <div class="content has-text-centered">
+            <% if flash[:errors] %>
+              <% flash[:errors].each do |e| %>
+                <p> <%= e %></p>
+              <% end %>
             <% end %>
-          <% end %>
-        </div>
-        <div class="content has-text-centered">
-          <%= form_for @recipe do |f| %>
-            <%= f.text_field :name %>
-            <%= f.submit "Search" %>
-          <% end %>
-        </div>
-      </article>
+          </div>
+          <div class="content has-text-centered">
+            <%= form_for @recipe do |f| %>
+              <%= f.text_field :name %>
+              <%= f.submit "Search" %>
+            <% end %>
+          </div>
+        </article>
+      </div>
     </div>
   </div>
-</div>

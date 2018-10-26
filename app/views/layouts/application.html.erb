@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <div id="image-cover" class="<%= "no-image" if current_page?(controller: 'user_recipes', action: 'index') || (params[:controller] == 'recipes' && params[:action] == 'show'); "another-image" if (params[:controller] == 'recipes' && params[:action] == 'new'); %>">
     <% if current_user.id != nil %>
     <p><%= current_user.keyword %></p>
       <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -124,6 +125,7 @@
         </p>
       </div>
   </footer>
+</div>
   </body>
 
 </html>
