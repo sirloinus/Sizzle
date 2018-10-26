@@ -24,18 +24,24 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[current_user.id])
+    @user = User.find(params[:id])
   end
 
+
   def update
-    @dog.update(user_params)
-    redirect_to user_path(@user)
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    if @user.valid?
+      redirect_to user_path(@user)
+    else
+      flash[:errors] = @user.errors.full_messages
+      redirect_to edit_user_path(@cupcake)
+    end
   end
 
   private
 
   def user_params
-
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 

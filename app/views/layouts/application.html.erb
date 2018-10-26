@@ -9,7 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body id="<%= request.path == user_path(current_user) ? "image-user-show" : "image-search-three" %>">
+  <body>
     <% if current_user.id != nil %>
     <p><%= current_user.keyword %></p>
       <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -49,7 +49,7 @@
             <div class="navbar-item">
               <div class="buttons">
                 <a>
-                  <strong><%= link_to "My Account", href = " ", method: 'get', class: 'button is-primary' %></strong>
+                  <strong><%= link_to "My Account", href = "/users/#{current_user.id}/edit", method: 'get', class: 'button is-primary' %></strong>
                 </a>
               </div>
             </div>

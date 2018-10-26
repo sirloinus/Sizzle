@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # post '/recipes/search_three', to: "recipes#create", as: 'recipe_suggestion'
   # get '/recipes/new', to: 'recipes#new', as: 'search'
   # post '/recipes', to: 'recipes#create', as: 'suggestion'
-  resources :users, only: [:index, :show, :create, :edit]
+  resources :users
   resources :user_recipes
   resources :recipes, only: [ :new, :show, :create, :edit]
 
