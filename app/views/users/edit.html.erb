@@ -1,20 +1,35 @@
-<% if flash[:errors] %>
-  <ul>
-    <% flash[:errors].each do |error| %>
-      <li><%= error %></li>
-    <% end %>
-  </ul>
-<% end %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div id="text-tile" class="tile is-ancestor">
+  <div class="tile is-parent">
+    <article class="tile is-child notification is-primary">
+      <p class="title has-text-centered">Edit your details</p>
+        <div class="content has-text-centered">
+        <% if flash[:errors] %>
+          <ul>
+            <% flash[:errors].each do |error| %>
+              <li><%= error %></li>
+            <% end %>
+          </ul>
+        <% end %>
 
-<%= form_for @user do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, class: "input", placeholder: "Change Name" %>
-  <%= f.label :email %>
-  <%= f.text_field :email, class: "input", placeholder: "Change Email"  %>
-  <%= f.label :password %>
-  <%= f.password_field :password, class: "input", placeholder: "Enter New Password"  %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, class: "input", placeholder: "Confirm New Password"  %>
+        <%= form_for @user do |f| %>
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "input", placeholder: "Change Name" %>
+          <%= f.label :email %>
+          <%= f.text_field :email, class: "input", placeholder: "Change Email"  %>
+          <%= f.label :password %>
+          <%= f.password_field :password, class: "input", placeholder: "Enter New Password"  %>
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, class: "input", placeholder: "Confirm New Password"  %>
 
-  <%= f.submit "Save Changes" %>
-<% end %>
+          <%= f.submit "Save Changes" %>
+        <% end %>
+    </div>
+  </article>
+</div>

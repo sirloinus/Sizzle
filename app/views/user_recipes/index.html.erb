@@ -3,10 +3,17 @@
 </figure> -->
 
 <!-- <div id="image-user-cookbook" -->
-  <h1 id="header-margin-top-bottom" class="title is-3 has-text-grey-dark has-text-centered">Welcome <%= current_user.name.capitalize %> to your cookbook</h1>
+  <h1 id="header-margin-top-bottom" class="title is-3 has-text-grey-dark has-text-centered"><%= current_user.name.capitalize %>, welcome to your cookbook!</h1>
 
   <% if current_user.recipes.length == 0 %>
-    <p class="has-text-centered">Search for your favourite recipes and save it to your cookbook.</p>
+    <div id="cookbook-tile" class="tile is-ancestor">
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-primary">
+          <p class="has-text-centered">Search for your favourite recipes and save it to your cookbook.</p>
+        </article>
+        </div>
+      </div>
+    </div>
   <% else %>
     <div class="container is-widescreen">
       <div id="flex-styling" class="columns">
